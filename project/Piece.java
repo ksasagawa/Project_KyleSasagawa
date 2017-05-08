@@ -37,14 +37,14 @@ public class Piece
 	}
 	public boolean move(board b, String position1, String position2)
 	{
-		boolean valid;
+		boolean valid = false;
 		switch (value)
 		{
-			case 1: if(b.getPiece(position1.substring(0,1),position1.substring(1)).getValue()!=1
-			&&((position1.substring(1).equals("2")&&position2.equals("5"+position1.substring(0,1)))
-				||(position2.equals(position1.substring(String.valueOf(Integer.parseInt(position2.substring(0,1)))+position1.substring(0,1))
-				)||))
-				{}
+			case 1: if(b.getPiece(position1.substring(0,1),position1.substring(1)).getValue()!=1 && (b.getPiece(position1.substring(0,1),position1.substring(1)).getValue()!=1))
+				&&((position1.substring(1).equals("2")&&position2.equals("5"+position1.substring(0,1)))
+				||(position2.equals(position1.substring(String.valueOf(Integer.parseInt(position2.substring(0,1)+1)),position1.substring(0,1)))
+				||))
+				{valid = true;}
 		}
 		return valid;
 	}
