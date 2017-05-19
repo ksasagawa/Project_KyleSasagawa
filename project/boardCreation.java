@@ -153,27 +153,82 @@ public class boardCreation
 	{
 		String moving = convert(xy).substring(0,2);
 		String movingTo = convert(xy).substring(2);
-		if(moveIsValid())
+		if(moveIsValid(board[Integer.parseInt(moving.substring(0,1))][Integer.parseInt(moving.substring(1))],moving,movingTo))
 		{
-			board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(1,2))] = board[Integer.parseInt(moving.substring(0,1))][Integer.parseInt(moving.substring(1,2))];
-			board[Integer.parseInt(moving.substring(0,1))][Integer.parseInt(moving.substring(1,2))] = " ";
+			board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(1))] = board[Integer.parseInt(moving.substring(0,1))][Integer.parseInt(moving.substring(1))];
+			board[Integer.parseInt(moving.substring(0,1))][Integer.parseInt(moving.substring(1))] = " ";
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public static boolean moveIsValid(String piece,String moving,String movingTo)
+	{
+		switch(piece)
+		{
+		case "P":if((isPieceInWay(moving, movingTo)
+					&&((moving.substring(0,1).equals("2")&&(movingTo.equals("3"+moving.substring(1))||movingTo.equals("4"+moving.substring(1))))//moving two spaces in the beginning
+					||(movingTo.equals(Integer.toString(Integer.parseInt(moving.substring(0,1))+1)+moving.substring(1)))//moving any other way
+					))
+					||(board[Integer.parseInt(movingTo.substring(0,1))+1][Integer.parseInt(movingTo.substring(1,2))+1] != " ")//capture left
+					||(board[Integer.parseInt(movingTo.substring(0,1))-1][Integer.parseInt(movingTo.substring(1,2))+1] != " "))//capture right
+					{
+						return false;
+					}
+			break;
+		case "p":
+			break;
+		case "N":
+			break;
+		case "n":
+			break;
+		case "B":
+			break;
+		case "b":
+			break;
+		case "R":
+			break;
+		case "r":
+			break;
+		case "Q":
+			break;
+		case "q":
+			break;
+		case "K":
+			break;
+		case "k":
+			break;
+		default: return false;
+		}
+		return false;
+	}
+	public static void isPieceInWay(String moving, String movingTo)
+	{
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
