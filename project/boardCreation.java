@@ -155,7 +155,8 @@ public class boardCreation
 		String movingTo = convert(xy).substring(2);
 		if(moveIsValid())
 		{
-			
+			board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(1,2))] = board[Integer.parseInt(moving.substring(0,1))][Integer.parseInt(moving.substring(1,2))];
+			board[Integer.parseInt(moving.substring(0,1))][Integer.parseInt(moving.substring(1,2))] = " ";
 		}
 	}
 	
