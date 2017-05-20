@@ -183,13 +183,13 @@ public class boardCreation
 						return false;
 					}
 			break;
-		case "N":if(!(((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
+		case "N":if(!(moveIsInBoard(moving, movingTo)&&((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
 			||((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==3))))
 			{
 				return false;
 			}
 			break;
-		case "n":if(!(((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
+		case "n":if(!(moveIsInBoard(moving, movingTo)&&((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
 			||((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==3))))
 			{
 				return false;
@@ -207,7 +207,7 @@ public class boardCreation
 			break;
 		case "q":if()
 			break;
-		case "K":if(!(((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
+		case "K":if(!(moveIsInBoard(moving, movingTo)&&((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
 			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==0))
 			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))))
 			{
