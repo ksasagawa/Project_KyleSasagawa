@@ -163,8 +163,8 @@ public class boardCreation
 	{
 		switch(piece)
 		{
-		case "P":if((isPieceInWay(moving, movingTo)
-					&&((moving.substring(0,1).equals("2")&&(movingTo.equals("3"+moving.substring(1))||movingTo.equals("4"+moving.substring(1))))//moving two spaces in the beginning
+		case "P":if((isPieceInWay(moving, movingTo)&&moveIsInBoard(moving, movingTo)
+					&&((moving.substring(0,1).equals("1")&&(movingTo.equals("2"+moving.substring(1))||movingTo.equals("3"+moving.substring(1))))//moving two spaces in the beginning
 					||(movingTo.equals(Integer.toString(Integer.parseInt(moving.substring(0,1))+1)+moving.substring(1)))//moving any other way
 					))
 					||(board[Integer.parseInt(movingTo.substring(0,1))+1][Integer.parseInt(movingTo.substring(1,2))+1] != " ")//capture left
@@ -173,27 +173,53 @@ public class boardCreation
 						return false;
 					}
 			break;
-		case "p":
+		case "p":if((isPieceInWay(moving, movingTo)&&moveIsInBoard(moving, movingTo)
+					&&((moving.substring(0,1).equals("6")&&(movingTo.equals("5"+moving.substring(1))||movingTo.equals("4"+moving.substring(1))))//moving two spaces in the beginning
+					||(movingTo.equals(Integer.toString(Integer.parseInt(moving.substring(0,1))-1)+moving.substring(1)))//moving any other way
+					))
+					||(board[Integer.parseInt(movingTo.substring(0,1))+1][Integer.parseInt(movingTo.substring(1,2))+1] != " ")//capture left
+					||(board[Integer.parseInt(movingTo.substring(0,1))-1][Integer.parseInt(movingTo.substring(1,2))+1] != " "))//capture right
+					{
+						return false;
+					}
 			break;
-		case "N":
+		case "N":if(!(((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
+			||((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==3))))
+			{
+				return false;
+			}
 			break;
-		case "n":
+		case "n":if(!(((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
+			||((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==3))))
+			{
+				return false;
+			}
 			break;
-		case "B":
+		case "B":if()
 			break;
-		case "b":
+		case "b":if()
 			break;
-		case "R":
+		case "R":if()
 			break;
-		case "r":
+		case "r":if()
 			break;
-		case "Q":
+		case "Q":if()
 			break;
-		case "q":
+		case "q":if()
 			break;
-		case "K":
+		case "K":if(!(((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
+			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==0))
+			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))))
+			{
+				return false;
+			}
 			break;
-		case "k":
+		case "k":if(!(((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
+			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==0))
+			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))))
+			{
+				return false;
+			}
 			break;
 		default: return false;
 		}
@@ -202,6 +228,11 @@ public class boardCreation
 	public static void isPieceInWay(String moving, String movingTo)
 	{
 		
+	}
+	public static boolean moveIsInBoard(String moving, String movingTo)
+	{
+		if((0<=Integer.parseInt(moving.substring(0,1))<=8)&&(0<=Integer.parseInt(moving.substring(1))<=8)&&(0<=Integer.parseInt(movingTo.substring(0,1))<=8)&&(0<=Integer.parseInt(movingTo.substring(1))<=8))
+			return true;
 	}
 }
 
