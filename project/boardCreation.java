@@ -229,7 +229,8 @@ public class boardCreation
 	{
 		switch(piece)
 		{
-			case "P":for(int i = Interger.parseInt(moving.substring(0,1)); i<Integer.parseInt(movingTo.substring(0,1));i++
+			case "P":for(int i = Interger.parseInt(moving.substring(0,1)); i<Integer.parseInt(movingTo.substring(0,1));i++)
+				if(board[i][Integer.parseInt()
 				break;
 			case "p":
 				break;
