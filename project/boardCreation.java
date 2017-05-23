@@ -229,34 +229,80 @@ public class boardCreation
 	{
 		switch(piece)
 		{
-			case "P":for(int i = Interger.parseInt(moving.substring(0,1)); i<Integer.parseInt(movingTo.substring(0,1));i++)
-				if(board[i][Integer.parseInt()
+			case "P":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<=Integer.parseInt(movingTo.substring(0,1));i++)
+			{
+				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="P"||board[i][Integer.parseInt(moving.substring(1,2))]=="N"||board[i][Integer.parseInt(moving.substring(1,2))]=="B"||board[i][Integer.parseInt(moving.substring(1,2))]=="R"||board[i][Integer.parseInt(moving.substring(1,2))]=="Q"||board[i][Integer.parseInt(moving.substring(1,2))]=="K")
+					return false;
+			}
 				break;
-			case "p":
+			case "p":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<=Integer.parseInt(movingTo.substring(0,1));i++)
+			{
+				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="p"||board[i][Integer.parseInt(moving.substring(1,2))]=="n"||board[i][Integer.parseInt(moving.substring(1,2))]=="b"||board[i][Integer.parseInt(moving.substring(1,2))]=="r"||board[i][Integer.parseInt(moving.substring(1,2))]=="q"||board[i][Integer.parseInt(moving.substring(1,2))]=="k")
+					return false;
+			}
 				break;
-			case "N":
+			case "N":if(board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == " "||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "P"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "N"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "B"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "R"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "Q"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "K")
+				return false;
 				break;
-			case "n":
+			case "n":if(board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == " "||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "p"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "n"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "b"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "r"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "q"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "k")
+				return false;
 				break;
-			case "B":
+			case "B":for(int i = 0; i<Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)));i++)
+			{
+				if(board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]==" "||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="P"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="N"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="B"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="R"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="Q"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="K")
+					return false;
+			}
 				break;
-			case "b":
+			case "b":for(int i = 0; i<Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)));i++)
+			{
+				if(board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]==" "||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="p"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="n"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="b"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="r"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="q"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="k")
+					return false;
+			}
 				break;
-			case "R":
+			case "R":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
+			{
+				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="P"||board[i][Integer.parseInt(moving.substring(1,2))]=="N"||board[i][Integer.parseInt(moving.substring(1,2))]=="B"||board[i][Integer.parseInt(moving.substring(1,2))]=="R"||board[i][Integer.parseInt(moving.substring(1,2))]=="Q"||board[i][Integer.parseInt(moving.substring(1,2))]=="K")
+					return false;
+			}
 				break;
-			case "r":
+			case "r":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
+			{
+				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="p"||board[i][Integer.parseInt(moving.substring(1,2))]=="n"||board[i][Integer.parseInt(moving.substring(1,2))]=="b"||board[i][Integer.parseInt(moving.substring(1,2))]=="r"||board[i][Integer.parseInt(moving.substring(1,2))]=="q"||board[i][Integer.parseInt(moving.substring(1,2))]=="k")
+					return false;
+			}
 				break;
-			case "Q":
+			case "Q":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
+			{
+				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="P"||board[i][Integer.parseInt(moving.substring(1,2))]=="N"||board[i][Integer.parseInt(moving.substring(1,2))]=="B"||board[i][Integer.parseInt(moving.substring(1,2))]=="R"||board[i][Integer.parseInt(moving.substring(1,2))]=="Q"||board[i][Integer.parseInt(moving.substring(1,2))]=="K")
+					return false;
+			}
+			for(int i = 0; i<Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)));i++)
+			{
+				if(board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]==" "||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="P"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="N"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="B"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="R"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="Q"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="K")
+					return false;
+			}
 				break;
-			case "q":
+			case "q":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
+			{
+				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="p"||board[i][Integer.parseInt(moving.substring(1,2))]=="n"||board[i][Integer.parseInt(moving.substring(1,2))]=="b"||board[i][Integer.parseInt(moving.substring(1,2))]=="r"||board[i][Integer.parseInt(moving.substring(1,2))]=="q"||board[i][Integer.parseInt(moving.substring(1,2))]=="k")
+					return false;
+			}
+			for(int i = 0; i<Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)));i++)
+			{
+				if(board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]==" "||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="p"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="n"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="b"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="r"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="q"||board[Integer.parseInt(moving.substring(0,1))+i][Integer.parseInt(moving.substring(1,2))+i]=="k")
+					return false;
+			}
 				break;
-			case "K":
+			case "K":if(board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == " "||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "P"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "N"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "B"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "R"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "Q"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "K")
+				return false;
 				break;
-			case "k":
+			case "k":if(board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == " "||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "p"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "n"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "b"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "r"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "q"||board[Integer.parseInt(movingTo.substring(0,1))][Integer.parseInt(movingTo.substring(0,1))] == "k")
+				return false;
 				break;
 			default:
 				break;
 		}
+		return true;
 	}
 	public static boolean moveIsInBoard(String moving, String movingTo)
 	{
