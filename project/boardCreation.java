@@ -54,21 +54,21 @@ public class boardCreation
 		{
 			switch (i)
 			{
-				case 0:board[7][i] = "r";
+				case 0:board[7][i] = "R";
 					break;
-				case 1:board[7][i] = "n";
+				case 1:board[7][i] = "N";
 					break;
-				case 2:board[7][i] = "b";
+				case 2:board[7][i] = "B";
 					break;
-				case 3:board[7][i] = "q";
+				case 3:board[7][i] = "Q";
 					break;
-				case 4:board[7][i] = "k";
+				case 4:board[7][i] = "K";
 					break;
-				case 5:board[7][i] = "b";
+				case 5:board[7][i] = "B";
 					break;
-				case 6:board[7][i] = "n";
+				case 6:board[7][i] = "N";
 					break;
-				case 7:board[7][i] = "r";
+				case 7:board[7][i] = "R";
 					break;
 				default:board[7][i]= null;
 					break; 
@@ -76,7 +76,7 @@ public class boardCreation
 		}
 		for(int i = 0; i<8;i++)
 		{
-			board[6][i] = "p";
+			board[6][i] = "P";
 		}
 		System.out.println(Arrays.deepToString(board));
 	}
