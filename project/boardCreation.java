@@ -183,36 +183,53 @@ public class boardCreation
 						return false;
 					}
 			break;
-		case "N":if(!(moveIsInBoard(moving, movingTo)&&((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
-			||((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==3))))
+		case "N":if(!(moveIsInBoard(moving, movingTo)&&((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
+			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==3))))
 			{
 				return false;
 			}
 			break;
-		case "n":if(!(moveIsInBoard(moving, movingTo)&&((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
-			||((Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Interger.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==3))))
+		case "n":if(!(moveIsInBoard(moving, movingTo)&&((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
+			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==3))))
 			{
 				return false;
 			}
 			break;
-		case "B":if(!(isPieceInWay(moving,movingTo,piece)&&moveIsInBoard(moving,movingTo)&&(Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)))
-			break;
-		case "b":if(!(isPieceInWay(moving,movingTo,piece)&&moveIsInBoard(moving,movingTo)&&(Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)))
-			break;
-		case "R":if(!(isPieceInWay(moving,movingTo,piece)&&moveIsInBoard(moving,movingTo)&&(moving.substring(0,1).equals(movingTo.substring(0,1))||moving.substring(1,2).equals(movingTo.substring(1,2)))))
+		case "B":if(!(isPieceInWay(moving,movingTo,piece)&&moveIsInBoard(moving,movingTo)&&(Math.abs(Integer.parseInt(moving.substring(0,1))-Integer.parseInt(moving.substring(1)))==Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(movingTo.substring(1))))
+			||(Math.abs(Integer.parseInt(moving.substring(0,1))+Integer.parseInt(moving.substring(1)))==Math.abs(Integer.parseInt(movingTo.substring(0,1))+Integer.parseInt(movingTo.substring(1))))))
 			{
 				return false;
 			}
 			break;
-		case "r":if(!(isPieceInWay(moving,movingTo,piece)&&moveIsInBoard(moving,movingTo)&&(moving.substring(0,1).equals(movingTo.substring(0,1))||moving.substring(1,2).equals(movingTo.substring(1,2)))))
+		case "b":if(!(isPieceInWay(moving,movingTo,piece)&&moveIsInBoard(moving,movingTo)&&(Math.abs(Integer.parseInt(moving.substring(0,1))-Integer.parseInt(moving.substring(1)))==Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(movingTo.substring(1))))
+			||(Math.abs(Integer.parseInt(moving.substring(0,1))+Integer.parseInt(moving.substring(1)))==Math.abs(Integer.parseInt(movingTo.substring(0,1))+Integer.parseInt(movingTo.substring(1))))))
 			{
 				return false;
 			}
 			break;
-		case "Q":if(!(isPieceInWay(moving,movingTo,piece)&&moveIsInBoard(moving,movingTo)&&(Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)))
+		case "R":if(!(isPieceInWay(moving,movingTo,piece)&&(moveIsInBoard(moving,movingTo))&&(((moving.substring(0,1).equals(movingTo.substring(0,1))||moving.substring(1,2).equals(movingTo.substring(1,2))&&(!moving.equals(movingTo)))))))
+			{
+				return false;
+			}
 			break;
-		case "q":if(!(isPieceInWay(moving,movingTo,piece)&&moveIsInBoard(moving,movingTo)&&(Math.abs(Interger.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==3)))
+		case "r":if(!(isPieceInWay(moving,movingTo,piece)&&(moveIsInBoard(moving,movingTo))&&(((moving.substring(0,1).equals(movingTo.substring(0,1))||moving.substring(1,2).equals(movingTo.substring(1,2))&&(!moving.equals(movingTo)))))))
+			{
+				return false;
+			}
 			break;
+		case "Q":if(!(isPieceInWay(moving,movingTo,piece)&&(moveIsInBoard(moving,movingTo))&&(((moving.substring(0,1).equals(movingTo.substring(0,1))||moving.substring(1,2).equals(movingTo.substring(1,2))&&(!moving.equals(movingTo)))))
+			||((Math.abs(Integer.parseInt(moving.substring(0,1))-Integer.parseInt(moving.substring(1)))==Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(movingTo.substring(1))))
+			||(Math.abs(Integer.parseInt(moving.substring(0,1))+Integer.parseInt(moving.substring(1)))==Math.abs(Integer.parseInt(movingTo.substring(0,1))+Integer.parseInt(movingTo.substring(1)))))))
+			{
+				return false;
+			}
+			break;
+		case "q":if(!(isPieceInWay(moving,movingTo,piece)&&(moveIsInBoard(moving,movingTo))&&(((moving.substring(0,1).equals(movingTo.substring(0,1))||moving.substring(1,2).equals(movingTo.substring(1,2))&&(!moving.equals(movingTo)))))
+			||((Math.abs(Integer.parseInt(moving.substring(0,1))-Integer.parseInt(moving.substring(1)))==Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(movingTo.substring(1))))
+			||(Math.abs(Integer.parseInt(moving.substring(0,1))+Integer.parseInt(moving.substring(1)))==Math.abs(Integer.parseInt(movingTo.substring(0,1))+Integer.parseInt(movingTo.substring(1)))))))
+			{
+				return false;
+			}
 		case "K":if(!(isPieceInWay(moving,movingTo,piece)&&(moveIsInBoard(moving, movingTo)&&((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
 			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==0))
 			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1)))))
@@ -222,12 +239,12 @@ public class boardCreation
 			break;
 		case "k":if(!(isPieceInWay(moving,movingTo,piece)&&(moveIsInBoard(moving, movingTo)&&((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))
 			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==0))
-			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1))))
+			||((Math.abs(Integer.parseInt(movingTo.substring(0,1))-Integer.parseInt(moving.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(movingTo.substring(1))-Integer.parseInt(moving.substring(1)))==1)))))
 			{
 				return false;
 			}
 			break;
-		default: return false;
+		default:
 		break;
 		}
 		return true;
@@ -236,13 +253,13 @@ public class boardCreation
 	{
 		switch(piece)
 		{
-			case "P":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<=Integer.parseInt(movingTo.substring(0,1));i++)
+			case "P":for(int i = Integer.parseInt(moving.substring(0,1))+1; i<=Integer.parseInt(movingTo.substring(0,1));i++)
 			{
 				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="P"||board[i][Integer.parseInt(moving.substring(1,2))]=="N"||board[i][Integer.parseInt(moving.substring(1,2))]=="B"||board[i][Integer.parseInt(moving.substring(1,2))]=="R"||board[i][Integer.parseInt(moving.substring(1,2))]=="Q"||board[i][Integer.parseInt(moving.substring(1,2))]=="K")
 					return false;
 			}
 				break;
-			case "p":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<=Integer.parseInt(movingTo.substring(0,1));i++)
+			case "p":for(int i = Integer.parseInt(moving.substring(0,1))+1; i<=Integer.parseInt(movingTo.substring(0,1));i++)
 			{
 				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="p"||board[i][Integer.parseInt(moving.substring(1,2))]=="n"||board[i][Integer.parseInt(moving.substring(1,2))]=="b"||board[i][Integer.parseInt(moving.substring(1,2))]=="r"||board[i][Integer.parseInt(moving.substring(1,2))]=="q"||board[i][Integer.parseInt(moving.substring(1,2))]=="k")
 					return false;
@@ -266,19 +283,19 @@ public class boardCreation
 					return false;
 			}
 				break;
-			case "R":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
+			case "R":for(int i = Integer.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
 			{
 				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="P"||board[i][Integer.parseInt(moving.substring(1,2))]=="N"||board[i][Integer.parseInt(moving.substring(1,2))]=="B"||board[i][Integer.parseInt(moving.substring(1,2))]=="R"||board[i][Integer.parseInt(moving.substring(1,2))]=="Q"||board[i][Integer.parseInt(moving.substring(1,2))]=="K")
 					return false;
 			}
 				break;
-			case "r":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
+			case "r":for(int i = Integer.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
 			{
 				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="p"||board[i][Integer.parseInt(moving.substring(1,2))]=="n"||board[i][Integer.parseInt(moving.substring(1,2))]=="b"||board[i][Integer.parseInt(moving.substring(1,2))]=="r"||board[i][Integer.parseInt(moving.substring(1,2))]=="q"||board[i][Integer.parseInt(moving.substring(1,2))]=="k")
 					return false;
 			}
 				break;
-			case "Q":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
+			case "Q":for(int i = Integer.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
 			{
 				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="P"||board[i][Integer.parseInt(moving.substring(1,2))]=="N"||board[i][Integer.parseInt(moving.substring(1,2))]=="B"||board[i][Integer.parseInt(moving.substring(1,2))]=="R"||board[i][Integer.parseInt(moving.substring(1,2))]=="Q"||board[i][Integer.parseInt(moving.substring(1,2))]=="K")
 					return false;
@@ -289,7 +306,7 @@ public class boardCreation
 					return false;
 			}
 				break;
-			case "q":for(int i = Interger.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
+			case "q":for(int i = Integer.parseInt(moving.substring(0,1))+1; i<Integer.parseInt(movingTo.substring(0,1));i++)
 			{
 				if(board[i][Integer.parseInt(moving.substring(1,2))]==" "||board[i][Integer.parseInt(moving.substring(1,2))]=="p"||board[i][Integer.parseInt(moving.substring(1,2))]=="n"||board[i][Integer.parseInt(moving.substring(1,2))]=="b"||board[i][Integer.parseInt(moving.substring(1,2))]=="r"||board[i][Integer.parseInt(moving.substring(1,2))]=="q"||board[i][Integer.parseInt(moving.substring(1,2))]=="k")
 					return false;
@@ -313,9 +330,12 @@ public class boardCreation
 	}
 	public static boolean moveIsInBoard(String moving, String movingTo)
 	{
-		if((0<=Integer.parseInt(moving.substring(0,1))<=8)&&(0<=Integer.parseInt(moving.substring(1))<=8)&&(0<=Integer.parseInt(movingTo.substring(0,1))<=8)&&(0<=Integer.parseInt(movingTo.substring(1))<=8))
+		if((Double.parseDouble(moving.substring(0,1))<=8)&&(Integer.parseInt(moving.substring(1))<=8)&&(Integer.parseInt(movingTo.substring(0,1))<=8)&&(Integer.parseInt(movingTo.substring(1))<=8))
 			return true;
+		else 
+			return false;
 	}
+	
 }
 
 
