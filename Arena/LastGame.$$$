@@ -1,24 +1,19 @@
-[LastMove "2428846"]
+[LastMove "0"]
 [Event "Computer chess game"]
 [Site "TP-SU-114-25"]
-[Date "2017.05.15"]
+[Date "2017.05.27"]
 [Round "?"]
-[White "sasagawak3540"]
-[Black "SOS 5.1 for Arena"]
+[White "SOS 5.1 for Arena"]
+[Black "AnMon 5.75"]
 [Result "*"]
 [BlackElo "2000"]
-[Time "13:09:44"]
-[WhiteElo "2400"]
+[Time "09:57:36"]
+[WhiteElo "2000"]
 [TimeControl "300"]
 [Termination "unterminated"]
-[PlyCount "9"]
+[PlyCount "0"]
 [WhiteType "program"]
 [BlackType "program"]
 
-1. c4 c5 2. d4 cxd4 {(c5xd4 Qd1xd4 Nb8-c6 Qd4-d3
-Ng8-f6 Ng1-f3 e7-e5 Nb1-c3 h7-h6 e2-e4 Bf8-c5 Bc1-e3 Nc6-b4 b2-b3) +0.17/14
-13} 3. e4 e5 {(e7-e5 Ng1-f3 Ng8-f6 Bf1-d3 d7-d6 O-O Bf8-e7 h2-h3 O-O b2-b3
-Nb8-c6 Bc1-g5 h7-h6) +1.49/13 4} 4. Qxd4 exd4 {(e5xd4 Ng1-f3 Nb8-c6 Nb1-d2
-Ng8-f6 Bf1-d3 d7-d6 O-O Nc6-e5 Bd3-c2 d4-d3 Bc2-a4+ Bc8-d7 Ba4xd7+ Qd8xd7)
-+11.98/12 5} 5. Bg5 *
+ *
 

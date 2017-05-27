@@ -19,21 +19,21 @@ public class boardCreation
 		{
 			switch (i)
 			{
-				case 0:board[0][i] = "r";
+				case 0:board[0][i] = "R";
 					break;
-				case 1:board[0][i] = "n";
+				case 1:board[0][i] = "N";
 					break;
-				case 2:board[0][i] = "b";
+				case 2:board[0][i] = "B";
 					break;
-				case 3:board[0][i] = "q";
+				case 3:board[0][i] = "Q";
 					break;
-				case 4:board[0][i] = "k";
+				case 4:board[0][i] = "K";
 					break;
-				case 5:board[0][i] = "b";
+				case 5:board[0][i] = "B";
 					break;
-				case 6:board[0][i] = "n";
+				case 6:board[0][i] = "N";
 					break;
-				case 7:board[0][i] = "r";
+				case 7:board[0][i] = "R";
 					break;
 				default:board[0][i]= null;
 					break; 
@@ -54,21 +54,21 @@ public class boardCreation
 		{
 			switch (i)
 			{
-				case 0:board[7][i] = "R";
+				case 0:board[7][i] = "r";
 					break;
-				case 1:board[7][i] = "N";
+				case 1:board[7][i] = "n";
 					break;
-				case 2:board[7][i] = "B";
+				case 2:board[7][i] = "b";
 					break;
-				case 3:board[7][i] = "Q";
+				case 3:board[7][i] = "q";
 					break;
-				case 4:board[7][i] = "K";
+				case 4:board[7][i] = "k";
 					break;
-				case 5:board[7][i] = "B";
+				case 5:board[7][i] = "b";
 					break;
-				case 6:board[7][i] = "N";
+				case 6:board[7][i] = "n";
 					break;
-				case 7:board[7][i] = "R";
+				case 7:board[7][i] = "r";
 					break;
 				default:board[7][i]= null;
 					break; 
@@ -83,6 +83,8 @@ public class boardCreation
 	public static String convert(String xy)//will output the move notation in colum-row notation while mantaining previous notation (i.e e4e5 = 34 44)
 	{
 		String xyf ="";
+		if(xy.length() >2)
+			
 		if(xy.substring(0,1).equals("a"))
 			xyf="0"+xy.substring(1);
 		if(xy.substring(0,1).equals("b"))
