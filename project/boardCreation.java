@@ -80,75 +80,75 @@ public class boardCreation
 		}
 		System.out.println(Arrays.deepToString(board));
 	}
-	public static String convert(String xy)//will output the move notation in colum-row notation while mantaining previous notation (i.e e4e5 = 34 44)
+	public static String convert(String xy)//will output the move notation in row-column notation while mantaining previous notation (i.e e4e5 = 34 44)
 	{
 		String xyf ="";
 		if(xy.contains("x")
 			
 		if(xy.substring(0,1).equals("a"))
-			xyf="0"+xy.substring(1);
-		if(xy.substring(0,1).equals("b"))
-			xyf="1"+xy.substring(1);
-		if(xy.substring(0,1).equals("c"))
-			xyf="2"+xy.substring(1);
-		if(xy.substring(0,1).equals("d"))
-			xyf="3"+xy.substring(1);
-		if(xy.substring(0,1).equals("e"))
-			xyf="4"+xy.substring(1);
-		if(xy.substring(0,1).equals("f"))
-			xyf="5"+xy.substring(1);
-		if(xy.substring(0,1).equals("g"))
-			xyf="6"+xy.substring(1);
-		if(xy.substring(0,1).equals("h"))
-			xyf="7"+xy.substring(1);
-		if(xy.substring(2,3).equals("a"))
-			xyf=xy.substring(0,2)+"0"+xy.substring(3);
-		if(xy.substring(2,3).equals("b"))
-			xyf=xy.substring(0,2)+"1"+xy.substring(3);
-		if(xy.substring(2,3).equals("c"))
-			xyf=xy.substring(0,2)+"2"+xy.substring(3);
-		if(xy.substring(2,3).equals("d"))
-			xyf=xy.substring(0,2)+"3"+xy.substring(3);
-		if(xy.substring(2,3).equals("e"))
-			xyf=xy.substring(0,2)+"4"+xy.substring(3);
-		if(xy.substring(2,3).equals("f"))
-			xyf=xy.substring(0,2)+"5"+xy.substring(3);
-		if(xy.substring(2,3).equals("g"))
-			xyf=xy.substring(0,2)+"6"+xy.substring(3);
-		if(xy.substring(2,3).equals("h"))
-			xyf=xy.substring(0,2)+"7"+xy.substring(3);
-		if(xy.substring(1,2).equals("1"))
 			xyf=xy.substring(0,1)+"0"+xy.substring(2);
-		if(xy.substring(1,2).equals("2"))
+		if(xy.substring(0,1).equals("b"))
 			xyf=xy.substring(0,1)+"1"+xy.substring(2);
-		if(xy.substring(1,2).equals("3"))
+		if(xy.substring(0,1).equals("c"))
 			xyf=xy.substring(0,1)+"2"+xy.substring(2);
-		if(xy.substring(1,2).equals("4"))
+		if(xy.substring(0,1).equals("d"))
 			xyf=xy.substring(0,1)+"3"+xy.substring(2);
-		if(xy.substring(1,2).equals("5"))
+		if(xy.substring(0,1).equals("e"))
 			xyf=xy.substring(0,1)+"4"+xy.substring(2);
-		if(xy.substring(1,2).equals("6"))
+		if(xy.substring(0,1).equals("f"))
 			xyf=xy.substring(0,1)+"5"+xy.substring(2);
-		if(xy.substring(1,2).equals("7"))
+		if(xy.substring(0,1).equals("g"))
 			xyf=xy.substring(0,1)+"6"+xy.substring(2);
-		if(xy.substring(1,2).equals("8"))
+		if(xy.substring(0,1).equals("h"))
 			xyf=xy.substring(0,1)+"7"+xy.substring(2);
-		if(xy.substring(3).equals("1"))
+		if(xy.substring(2,3).equals("a"))
 			xyf=xy.substring(0,3)+"0";
-		if(xy.substring(3).equals("2"))
+		if(xy.substring(2,3).equals("b"))
 			xyf=xy.substring(0,3)+"1";
-		if(xy.substring(3).equals("3"))
+		if(xy.substring(2,3).equals("c"))
 			xyf=xy.substring(0,3)+"2";
-		if(xy.substring(3).equals("4"))
+		if(xy.substring(2,3).equals("d"))
 			xyf=xy.substring(0,3)+"3";
-		if(xy.substring(3).equals("5"))
+		if(xy.substring(2,3).equals("e"))
 			xyf=xy.substring(0,3)+"4";
-		if(xy.substring(3).equals("6"))
+		if(xy.substring(2,3).equals("f"))
 			xyf=xy.substring(0,3)+"5";
-		if(xy.substring(3).equals("7"))
+		if(xy.substring(2,3).equals("g"))
 			xyf=xy.substring(0,3)+"6";
-		if(xy.substring(3).equals("8"))
+		if(xy.substring(2,3).equals("h"))
 			xyf=xy.substring(0,3)+"7";
+		if(xy.substring(1,2).equals("1"))
+			xyf="0"+xy.substring(1);
+		if(xy.substring(1,2).equals("2"))
+			xyf="1"+xy.substring(1);
+		if(xy.substring(1,2).equals("3"))
+			xyf="2"+xy.substring(1);
+		if(xy.substring(1,2).equals("4"))
+			xyf="3"+xy.substring(1);
+		if(xy.substring(1,2).equals("5"))
+			xyf="4"+xy.substring(1);
+		if(xy.substring(1,2).equals("6"))
+			xyf="5"+xy.substring(1);
+		if(xy.substring(1,2).equals("7"))
+			xyf="6"+xy.substring(1);
+		if(xy.substring(1,2).equals("8"))
+			xyf="7"+xy.substring(1);
+		if(xy.substring(3).equals("1"))
+			xyf=xy.substring(0,2)+"0"+xy.substring(3);
+		if(xy.substring(3).equals("2"))
+			xyf=xy.substring(0,2)+"1"+xy.substring(3);
+		if(xy.substring(3).equals("3"))
+			xyf=xy.substring(0,2)+"2"+xy.substring(3);
+		if(xy.substring(3).equals("4"))
+			xyf=xy.substring(0,2)+"3"+xy.substring(3);
+		if(xy.substring(3).equals("5"))
+			xyf=xy.substring(0,2)+"4"+xy.substring(3);
+		if(xy.substring(3).equals("6"))
+			xyf=xy.substring(0,2)+"5"+xy.substring(3);
+		if(xy.substring(3).equals("7"))
+			xyf=xy.substring(0,2)+"6"+xy.substring(3);
+		if(xy.substring(3).equals("8"))
+			xyf=xy.substring(0,2)+"7"+xy.substring(3);
 		return xyf;
 	}
 	public static void move(String xy)//will replace the string at the piece that is moving with " " and replace the string at the place it is moving to the piece
