@@ -41,7 +41,7 @@ public class boardCreation
 		}
 		for(int i = 0; i<8;i++)
 		{
-			board[1][i] = "p";
+			board[1][i] = "P";
 		}
 		for(int i = 2;i<6;i++)
 		{
@@ -76,7 +76,7 @@ public class boardCreation
 		}
 		for(int i = 0; i<8;i++)
 		{
-			board[6][i] = "P";
+			board[6][i] = "p";
 		}
 		System.out.println(Arrays.deepToString(board));
 	}
