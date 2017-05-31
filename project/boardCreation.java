@@ -83,7 +83,7 @@ public class boardCreation
 	public static String convert(String xy)//will output the move notation in colum-row notation while mantaining previous notation (i.e e4e5 = 34 44)
 	{
 		String xyf ="";
-		if(xy.length() >2)
+		if(xy.contains("x")
 			
 		if(xy.substring(0,1).equals("a"))
 			xyf="0"+xy.substring(1);
