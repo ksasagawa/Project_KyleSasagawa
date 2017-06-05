@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class ChessEng
 {
 	String name = "KS_Engine";
-	public static void Arena_to_Engine()
+	public static void ChessEng()
 	{
 		Scanner input = new Scanner(System.in);
 		while (true)
@@ -41,28 +41,36 @@ public class ChessEng
                 print();
             }
         }
-		public static void setUp()
-		{
-			System.out.println("id name" + name);
-			System.out.println("id author Kyle Sasagawa");
-			//PLACEHOLDER FOR OPTIONS RETURN LATER
-			System.out.println("readyok")
-		}
-		public static void setOption(String options)
-		{
-			//PLACEHOLDER FOR OPTIONS RETURN LATER
-		}
-		public static void ready()
-		{
-			System.out.println("readyok");
-		}
-		public static void reset()
-		{
-			//clearBoard();
-		}
-		public static void positionSet(String moves)
-		{
-			
-		}
-    }
+	}
+	public static void setUp()
+	{
+		System.out.println("id name" + name);
+		System.out.println("id author Kyle Sasagawa");
+		//PLACEHOLDER FOR OPTIONS RETURN LATER
+		System.out.println("readyok");
+	}
+	public static void setOption(String options)
+	{
+		//PLACEHOLDER FOR OPTIONS RETURN LATER
+	}
+	public static void ready()
+	{
+		System.out.println("readyok");
+	}
+	public static void reset()
+	{
+		createNew();
+	}
+	public static void go()
+	{
+		
+	}
+	public static void end()
+	{
+		System.exit(0);
+	}
+	public static void print()
+	{
+		System.out.println(returnboard());
+	}
 }

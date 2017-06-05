@@ -83,8 +83,10 @@ public class boardCreation
 	public static String convert(String xy)//will output the move notation in row-column notation while mantaining previous notation (i.e e4e5 = 34 44)
 	{
 		String xyf ="";
-		if(xy.contains("x")
-			
+		if(xy.contains("x"))
+		{
+			//finish later.
+		}
 		if(xy.substring(0,1).equals("a"))
 			xyf=xy.substring(0,1)+"0"+xy.substring(2);
 		if(xy.substring(0,1).equals("b"))
@@ -337,7 +339,40 @@ public class boardCreation
 		else 
 			return false;
 	}
-	
+	public static String[][] returnBoard()
+	{
+		return board;
+	}
+	public static double analysis()
+	{
+		double boardState;
+		for(String piece: board)
+		{
+			switch(piece)
+			{
+				case "P":boardState += (1.98+)
+				break;
+				case "N":
+				break;
+				case "R":
+				break;
+				case "Q":
+				break;
+				case "B":
+				break;
+				case "p":
+				break;
+				case "n":
+				break;
+				case "r":
+				break;
+				case "q":
+				break;
+				case "b":
+				break;
+			}
+		}
+	}
 }
 
 

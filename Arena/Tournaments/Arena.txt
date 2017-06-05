@@ -1,0 +1,15 @@
+   Engine            Score  St Sp An SO    S-B
+1: Stockfish_8_x64   2.5/3  ·· =  1? 1     2.50
+2: Spike 1.4         2.0/3  =  ·· 1  =     2.50
+3: AnMon 5.75        1.0/3  0? 0  ·· 1     0.50
+4: SOS 5.1 for Arena 0.5/3  0  =  0  ··    1.00
+
+6 of 60 games played
+Name of the tournament: a.at
+Site/ Country: TP-SU-114-25, United States
+Level: Blitz 1:30/6
+Hardware: Intel(R) Core(TM) i5-3470S CPU @ 2.90GHz with 7.9 GB Memory
+Operating system: Professional Service Pack 1 (Build 7601) 64 bit
+PGN-File: C:\Users\sasagawak3540\Desktop\Project_KyleSasagawa\Arena\Arena.pgn
+Website: 
+E-Mail Address: 
