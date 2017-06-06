@@ -343,14 +343,20 @@ public class boardCreation
 	{
 		return board;
 	}
+	public static  isThreatened()
+	{
+		if()
+	}
 	public static double analysis()
 	{
 		double boardState;
+		double pieceValue;
 		for(String piece: board)
 		{
 			switch(piece)
 			{
-				case "P":boardState += (1.98+)
+				case "P":pieceValue = 1.98;
+				boardState += (1.98-if((isThreatened()){pieceValue}else{0}))
 				break;
 				case "N":
 				break;
@@ -369,6 +375,8 @@ public class boardCreation
 				case "q":
 				break;
 				case "b":
+				break;
+				default:
 				break;
 			}
 		}
