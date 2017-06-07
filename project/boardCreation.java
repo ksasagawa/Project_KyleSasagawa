@@ -515,7 +515,7 @@ public class boardCreation
 				switch(piece)
 				{
 					case "P":pieceValue = 1.98;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+);
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
 					break;
 					case "N":pieceValue = 8.17;
 					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
@@ -549,6 +549,7 @@ public class boardCreation
 				}
 			}
 		}
+		boardState += 
 		return boardState;
 	}
 }
