@@ -343,43 +343,213 @@ public class boardCreation
 	{
 		return board;
 	}
-	public static  isThreatened()
+	public static int isThreatened(String piece, String position)
 	{
-		if()
+		String atkPos;
+		int numOfThreats = 0;
+		for(int i = 0; i <= 8; i++)
+		{
+			for(int z = 0; i<=8; i++)
+			{
+				atkPos = ""+i+z;
+				String atkPiece=board[i][z];
+				if(piece.equals(piece.toUpperCase())&&atkPiece.equals(atkPiece.toLowerCase()))
+				{
+					switch(atkPiece)
+					{
+						case "p":if((Integer.parseInt(atkPos.substring(0,1)) == Integer.parseInt(position.substring(0,1))-1) && Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1))==1)
+									numOfThreats++;
+						break;
+						case "n":if(((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==3)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
+							||((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==3)))
+									numOfThreats++;
+						break;
+						case "r":if((isPieceInWay(atkPos,position,atkPiece)&&(((atkPos.substring(0,1).equals(position.substring(0,1))||atkPos.substring(1,2).equals(position.substring(1,2))&&(!atkPos.equals(position)))))))
+									numOfThreats++;
+						break;
+						case "q":if((isPieceInWay(atkPos,position,atkPiece)&&(((atkPos.substring(0,1).equals(position.substring(0,1))||atkPos.substring(1,2).equals(position.substring(1,2))&&(!atkPos.equals(position)))))
+			||((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(atkPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))-Integer.parseInt(position.substring(1))))
+			||(Math.abs(Integer.parseInt(atkPos.substring(0,1))+Integer.parseInt(atkPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
+									numOfThreats++;
+						break;
+						case "b":if((isPieceInWay(atkPos,position,atkPiece)&&((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(atkPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))-Integer.parseInt(position.substring(1))))
+			||(Math.abs(Integer.parseInt(atkPos.substring(0,1))+Integer.parseInt(atkPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
+									numOfThreats++;
+						break;
+						case "k":if((isPieceInWay(atkPos,position,atkPiece)&&((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
+			||((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==0))
+			||((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==1))))
+									numOfThreats++;
+						break;
+						default:
+						break;
+					}
+				}
+				else if(piece.equals(piece.toLowerCase())&&atkPiece.equals(atkPiece.toUpperCase()))
+				{
+					switch(atkPiece)
+					{
+						case "P":if((Integer.parseInt(atkPos.substring(0,1)) == Integer.parseInt(position.substring(0,1))-1) && Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1))==-1)
+									numOfThreats++;
+						break;
+						case "N":if(((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==3)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
+							||((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==3)))
+									numOfThreats++;
+						break;
+						case "R":if((isPieceInWay(atkPos,position,atkPiece)&&(((atkPos.substring(0,1).equals(position.substring(0,1))||atkPos.substring(1,2).equals(position.substring(1,2))&&(!atkPos.equals(position)))))))
+									numOfThreats++;
+						break;
+						case "Q":if((isPieceInWay(atkPos,position,atkPiece)&&(((atkPos.substring(0,1).equals(position.substring(0,1))||atkPos.substring(1,2).equals(position.substring(1,2))&&(!atkPos.equals(position)))))
+			||((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(atkPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))-Integer.parseInt(position.substring(1))))
+			||(Math.abs(Integer.parseInt(atkPos.substring(0,1))+Integer.parseInt(atkPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
+									numOfThreats++;
+						break;
+						case "B":if((isPieceInWay(atkPos,position,atkPiece)&&((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(atkPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))-Integer.parseInt(position.substring(1))))
+			||(Math.abs(Integer.parseInt(atkPos.substring(0,1))+Integer.parseInt(atkPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
+									numOfThreats++;
+						break;
+						case "K":if((isPieceInWay(atkPos,position,atkPiece)&&((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
+			||((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==0))
+			||((Math.abs(Integer.parseInt(atkPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(atkPos.substring(1))-Integer.parseInt(position.substring(1)))==1))))
+									numOfThreats++;
+						break;
+						default:
+						break;
+					}
+				}
+			}
+		}
+		return numOfThreats;
+	}
+	public static double atkDEF(int threats, String position, double pieceValue, String piece)
+	{
+		boolean isDefended = false;
+		for(int i = 0; i <= 8; i++)
+		{
+			for(int z = 0; i<=8; i++)
+			{
+				String defPos = ""+i+z;
+				String defPiece = board[i][z];
+				if(piece.equals(piece.toUpperCase())&& defPiece.equals(piece.toUpperCase()))
+				{
+					switch(defPiece)
+					{
+						case "P":if(Integer.parseInt(defPos.substring(0,1)) == Integer.parseInt(position.substring(0,1))-1 && Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1))==-1)
+									isDefended = true;
+						break;
+						case "N":if(((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==3)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
+							||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==3)))
+									isDefended = true;
+						break;
+						case "R":if((isPieceInWay(defPos,position,defPiece)&&(((defPos.substring(0,1).equals(position.substring(0,1))||defPos.substring(1,2).equals(position.substring(1,2))&&(!defPos.equals(position)))))))
+									isDefended = true;
+						break;
+						case "Q":if((isPieceInWay(defPos,position,defPiece)&&(((defPos.substring(0,1).equals(position.substring(0,1))||defPos.substring(1,2).equals(position.substring(1,2))&&(!defPos.equals(position)))))
+			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))-Integer.parseInt(position.substring(1))))
+			||(Math.abs(Integer.parseInt(defPos.substring(0,1))+Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
+									isDefended = true;
+						break;
+						case "B":if((isPieceInWay(defPos,position,defPiece)&&((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))-Integer.parseInt(position.substring(1))))
+			||(Math.abs(Integer.parseInt(defPos.substring(0,1))+Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
+									isDefended = true;
+						break;
+						case "K":if((isPieceInWay(defPos,position,defPiece)&&((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
+			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==0))
+			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))))
+									isDefended = true;
+						break;
+						default:
+						break;
+					}
+				}
+				else if(piece.equals(piece.toLowerCase())&& defPiece.equals(piece.toUpperCase()))
+				{
+					switch(defPiece)
+					{
+						case "p":if(Integer.parseInt(defPos.substring(0,1)) == Integer.parseInt(position.substring(0,1))-1 && Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1))==1)
+									isDefended = true;
+						break;
+						case "n":if(((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==3)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
+							||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==3)))
+									isDefended = true;
+						break;
+						case "r":if((isPieceInWay(defPos,position,defPiece)&&(((defPos.substring(0,1).equals(position.substring(0,1))||defPos.substring(1,2).equals(position.substring(1,2))&&(!defPos.equals(position)))))))
+									isDefended = true;
+						break;
+						case "q":if((isPieceInWay(defPos,position,defPiece)&&(((defPos.substring(0,1).equals(position.substring(0,1))||defPos.substring(1,2).equals(position.substring(1,2))&&(!defPos.equals(position)))))
+			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))-Integer.parseInt(position.substring(1))))
+			||(Math.abs(Integer.parseInt(defPos.substring(0,1))+Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
+									isDefended = true;
+						break;
+						case "b":if((isPieceInWay(defPos,position,defPiece)&&((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))-Integer.parseInt(position.substring(1))))
+			||(Math.abs(Integer.parseInt(defPos.substring(0,1))+Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
+									isDefended = true;
+						break;
+						case "k":if((isPieceInWay(defPos,position,defPiece)&&((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
+			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==0))
+			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))))
+									isDefended = true;
+						break;
+						default:
+						break;
+					}
+				}
+			}
+		}
+		if(isDefended)
+			return pieceValue/2;
+		else 
+			return threats/5;
 	}
 	public static double analysis()
 	{
-		double boardState;
-		double pieceValue;
-		for(String piece: board)
+		double boardState = 0;
+		double pieceValue = 0;
+		String position;
+		for(int i = 0; i <= 8; i++)
 		{
-			switch(piece)
+			for(int z = 0; i<=8; i++)
 			{
-				case "P":pieceValue = 1.98;
-				boardState += (1.98-if((isThreatened()){pieceValue}else{0}))
-				break;
-				case "N":
-				break;
-				case "R":
-				break;
-				case "Q":
-				break;
-				case "B":
-				break;
-				case "p":
-				break;
-				case "n":
-				break;
-				case "r":
-				break;
-				case "q":
-				break;
-				case "b":
-				break;
-				default:
-				break;
+				position = ""+i+z;
+				String piece = board[i][z];
+				switch(piece)
+				{
+					case "P":pieceValue = 1.98;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+);
+					break;
+					case "N":pieceValue = 8.17;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					break;
+					case "R":pieceValue = 12.70;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					break;
+					case "Q":pieceValue = 25.21;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					break;
+					case "B":pieceValue = 8.36;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					break;
+					case "p":pieceValue = -1.98;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					break;
+					case "n":pieceValue = -8.17;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					break;
+					case "r":pieceValue = -12.70;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					break;
+					case "q":pieceValue = -25.21;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					break;
+					case "b":pieceValue = -8.36;
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					break;
+					default:
+					break;
+				}
 			}
 		}
+		return boardState;
 	}
 }
 
