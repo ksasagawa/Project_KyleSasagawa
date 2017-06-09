@@ -501,6 +501,16 @@ public class boardCreation
 		else 
 			return threats/5;
 	}
+	public static int availableMoves(String piece, String position)
+	{
+		int possibleMoves;
+		for(String boardPlaces: board)
+		{
+			if(moveIsValid(piece,position,boardPlaces))
+				possibleMoves++;
+		}
+		return possibleMoves;
+	}
 	public static double analysis()
 	{
 		double boardState = 0;
@@ -515,34 +525,34 @@ public class boardCreation
 				switch(piece)
 				{
 					case "P":pieceValue = 1.98;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					case "N":pieceValue = 8.17;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					case "R":pieceValue = 12.70;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					case "Q":pieceValue = 25.21;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					case "B":pieceValue = 8.36;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					case "p":pieceValue = -1.98;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					case "n":pieceValue = -8.17;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					case "r":pieceValue = -12.70;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					case "q":pieceValue = -25.21;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					case "b":pieceValue = -8.36;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece)));
+					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					default:
 					break;
