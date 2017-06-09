@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class boardCreation
 {
 	public static String board[][] = new String[8][8];
+	
 	public static void createNEW()//create new chess board
 	{
 		
@@ -424,6 +425,7 @@ public class boardCreation
 	public static double atkDEF(int threats, String position, double pieceValue, String piece)
 	{
 		boolean isDefended = false;
+		boolean check = false;
 		for(int i = 0; i <= 8; i++)
 		{
 			for(int z = 0; i<=8; i++)
@@ -453,10 +455,8 @@ public class boardCreation
 			||(Math.abs(Integer.parseInt(defPos.substring(0,1))+Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
 									isDefended = true;
 						break;
-						case "K":if((isPieceInWay(defPos,position,defPiece)&&((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
-			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==0))
-			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))))
-									isDefended = true;
+						case "K":if(isThreatened(piece, position))
+							check = true;
 						break;
 						default:
 						break;
@@ -485,21 +485,24 @@ public class boardCreation
 			||(Math.abs(Integer.parseInt(defPos.substring(0,1))+Integer.parseInt(defPos.substring(1)))==Math.abs(Integer.parseInt(position.substring(0,1))+Integer.parseInt(position.substring(1)))))))
 									isDefended = true;
 						break;
-						case "k":if((isPieceInWay(defPos,position,defPiece)&&((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))
-			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==1)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==0))
-			||((Math.abs(Integer.parseInt(defPos.substring(0,1))-Integer.parseInt(position.substring(0,1)))==0)&&(Math.abs(Integer.parseInt(defPos.substring(1))-Integer.parseInt(position.substring(1)))==1))))
-									isDefended = true;
+						case "k":if(isThreatened(piece, position))
+							check = true;
 						break;
 						default:
 						break;
+						
 					}
 				}
 			}
 		}
-		if(isDefended)
+		if(check)
+			return 100000;
+		else if (isThreatened(piece, position))
 			return pieceValue/2;
-		else 
+		else if (isDefended)
 			return threats/5;
+		else
+			return 0;
 	}
 	public static int availableMoves(String piece, String position)
 	{
@@ -539,27 +542,32 @@ public class boardCreation
 					case "B":pieceValue = 8.36;
 					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
-					case "p":pieceValue = -1.98;
+					case "p":pieceValue = 1.98;
+					boardState -= (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
+					break;
+					case "n":pieceValue = 8.17;
+					boardState -= (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
+					break;
+					case "r":pieceValue = 12.70;
+					boardState -= (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
+					break;
+					case "q":pieceValue = 25.21;
+					boardState -= (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
+					break;
+					case "b":pieceValue = 8.36;
+					boardState -= (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
+					break;
+					case "K":pieceValue = 1000;
 					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
-					case "n":pieceValue = -8.17;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
-					break;
-					case "r":pieceValue = -12.70;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
-					break;
-					case "q":pieceValue = -25.21;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
-					break;
-					case "b":pieceValue = -8.36;
-					boardState += (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
+					case "k":pieceValue = 1000;
+					boardState -= (pieceValue-(atkDEF(isThreatened(piece,position), position, pieceValue, piece))+(availableMoves(piece,position)/10));
 					break;
 					default:
 					break;
 				}
 			}
 		}
-		boardState += 
 		return boardState;
 	}
 }
